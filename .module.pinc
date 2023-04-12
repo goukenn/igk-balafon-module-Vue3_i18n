@@ -1,0 +1,33 @@
+<?php
+// @author: C.A.D. BONDJE DOUE
+// @file: %modules%/igk/js/n18n/.module.pinc.php
+// @date: 20230303 09:50:37
+namespace igk\js\Vue3_i18n;
+
+
+$reg("initDoc", function($doc){
+    // if (igk_env_count(__FILE__."::initDoc")>1){
+    //     igk_trace();
+    //     igk_dev_wln_e("---render call twice", $doc);
+    // }
+    $uri = igk_environment()->isDev() ? Constants::CDN_DEV_URI: Constants::CDN_OPS_URI;
+    $doc->addTempScript($uri)->activate('defer');
+});
+
+// + module definition
+return [
+//------------------------------------------------
+// define entry name space
+//
+"entry_NS"=>\igk\js\Vue3_i18n::class,
+
+//------------------------------------------------
+// version
+//
+"version"=>"1.0",
+
+//-------------------------------------------------
+// author
+//
+"author"=>"C.A.D. BONDJE DOUE"
+];
